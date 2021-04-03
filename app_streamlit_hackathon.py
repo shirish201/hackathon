@@ -11,7 +11,10 @@ import streamlit as st
 from datetime import datetime
 from PIL import Image
 import io
+import plotly.graph_objs as go
 import matplotlib.pyplot as plt
+from plotly.subplots import make_subplots
+import plotly
 import datetime
 import SessionState
 from SessionState import get
@@ -221,10 +224,10 @@ Id,SalePrice
             tempLeaderBoard.loc[0,"Date"] = str(timenow)
             tempLeaderBoard.loc[0,"RMSE"] = rmse_result
             
-            leaderBoard_final = pd.read_csv("extra_files\\LeaderBoard\\leaderboard.csv")
+            leaderBoard_final = pd.read_csv("extra_files//LeaderBoard//leaderboard.csv")
             leaderBoard_final = pd.concat([leaderBoard_final,tempLeaderBoard], axis=0)
-            data_upload.to_csv("extra_files\\predData\\predData_" + file_name + "_" + timenow + ".csv")
-            leaderBoard_final.to_csv("extra_files\\LeaderBoard\\leaderboard.csv", index=False)
+            data_upload.to_csv("extra_files//predData//predData_" + file_name + "_" + timenow + ".csv")
+            leaderBoard_final.to_csv("extra_files//LeaderBoard//leaderboard.csv", index=False)
         except:
             pass
                  
@@ -233,7 +236,7 @@ Id,SalePrice
 def Leaderboard():
     st.title("Competition Leaderboard - Public")
     
-    leaderBoard = pd.read_csv("extra_files\\LeaderBoard\\leaderboard.csv")
+    leaderBoard = pd.read_csv("extra_files//LeaderBoard//leaderboard.csv")
     leaderBoard = leaderBoard.sort_values("RMSE").reset_index(drop=True)
     
     st.subheader("This leaderboard is calculated with all of the test data")
