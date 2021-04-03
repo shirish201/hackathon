@@ -206,6 +206,7 @@ Id,SalePrice
         st.write("""
                  **Upload your submission**   
                  """)
+        data_upload1 = st.file_uploader("Please upload your submission to evaluate...", type="csv", encoding = None)
         try:
             data_upload = st.file_uploader("Please upload your submissi to evaluate...", type="csv", encoding = None)
             file_name = data_upload.name.split("_")[1].split(".csv")[0]
