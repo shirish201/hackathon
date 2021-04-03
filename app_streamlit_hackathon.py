@@ -13,8 +13,6 @@ from PIL import Image
 import io
 import plotly.graph_objs as go
 import matplotlib.pyplot as plt
-from plotly.subplots import make_subplots
-import plotly
 import datetime
 import SessionState
 from SessionState import get
