@@ -11,7 +11,6 @@ import streamlit as st
 from datetime import datetime
 from PIL import Image
 import io
-import plotly.graph_objs as go
 import matplotlib.pyplot as plt
 import datetime
 import SessionState
