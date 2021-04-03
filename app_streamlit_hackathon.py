@@ -224,10 +224,10 @@ Id,SalePrice
             tempLeaderBoard.loc[0,"Date"] = str(timenow)
             tempLeaderBoard.loc[0,"RMSE"] = rmse_result
             
-            leaderBoard_final = pd.read_csv("extra_files\\LeaderBoard\\leaderboard.csv")
+            leaderBoard_final = pd.read_csv("extra_files//LeaderBoard//leaderboard.csv")
             leaderBoard_final = pd.concat([leaderBoard_final,tempLeaderBoard], axis=0)
-            data_upload.to_csv("extra_files\\predData\\predData_" + file_name + "_" + timenow + ".csv")
-            leaderBoard_final.to_csv("extra_files\\LeaderBoard\\leaderboard.csv", index=False)
+            data_upload.to_csv("extra_files//predData//predData_" + file_name + "_" + timenow + ".csv")
+            leaderBoard_final.to_csv("extra_files//LeaderBoard//leaderboard.csv", index=False)
         except:
             pass
                  
