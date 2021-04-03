@@ -15,7 +15,7 @@ from sklearn.metrics import mean_squared_error
 @st.cache
 def RMSE(predData, idvar, predvar, filename):
     
-    actData = pd.read_csv("extra_files\\actData\\actData.csv")
+    actData = pd.read_csv("extra_files//actData//actData.csv")
     predData = predData.sort_values(idvar)
     actData = actData.sort_values(idvar)
     rmse = mean_squared_error(actData[predvar], predData[predvar])
