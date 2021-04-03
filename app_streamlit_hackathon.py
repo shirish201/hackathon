@@ -206,9 +206,8 @@ Id,SalePrice
         st.write("""
                  **Upload your submission**   
                  """)
-        #data_upload1 = st.file_uploader("Please upload your submission to evaluate...", type="csv", encoding = None)
         try:
-            data_upload = st.file_uploader("Please upload your submissi to evaluate...", type="csv")
+            data_upload = st.file_uploader("Please upload your submission to evaluate...", type="csv")
             file_name = data_upload.name.split("_")[1].split(".csv")[0]
             data_upload = pd.read_csv(io.TextIOWrapper(data_upload), sep = ",")
             rmse_result = RMSE(predData = data_upload, idvar = "Id", predvar="SalePrice",
@@ -225,10 +224,10 @@ Id,SalePrice
             tempLeaderBoard.loc[0,"Date"] = str(timenow)
             tempLeaderBoard.loc[0,"RMSE"] = rmse_result
             
-            leaderBoard_final = pd.read_csv("extra_files//LeaderBoard//leaderboard.csv")
+            leaderBoard_final = pd.read_csv("extra_files\\LeaderBoard\\leaderboard.csv")
             leaderBoard_final = pd.concat([leaderBoard_final,tempLeaderBoard], axis=0)
-            data_upload.to_csv("extra_files//predData//predData_" + file_name + "_" + timenow + ".csv")
-            leaderBoard_final.to_csv("extra_files//LeaderBoard//leaderboard.csv", index=False)
+            data_upload.to_csv("extra_files\\predData\\predData_" + file_name + "_" + timenow + ".csv")
+            leaderBoard_final.to_csv("extra_files\\LeaderBoard\\leaderboard.csv", index=False)
         except:
             pass
                  
