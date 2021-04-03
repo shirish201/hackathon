@@ -206,9 +206,9 @@ Id,SalePrice
         st.write("""
                  **Upload your submission**   
                  """)
-        data_upload1 = st.file_uploader("Please upload your submission to evaluate...", type="csv", encoding = None)
+        #data_upload1 = st.file_uploader("Please upload your submission to evaluate...", type="csv", encoding = None)
         try:
-            data_upload = st.file_uploader("Please upload your submissi to evaluate...", type="csv", encoding = None)
+            data_upload = st.file_uploader("Please upload your submissi to evaluate...", type="csv")
             file_name = data_upload.name.split("_")[1].split(".csv")[0]
             data_upload = pd.read_csv(io.TextIOWrapper(data_upload), sep = ",")
             rmse_result = RMSE(predData = data_upload, idvar = "Id", predvar="SalePrice",
