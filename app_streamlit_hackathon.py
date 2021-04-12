@@ -24,7 +24,8 @@ st.set_option('deprecation.showfileUploaderEncoding', False)
 
 def login_password():
     title = st.empty()
-    title.title("Welcome to Novartis DS&D Data Science Hackathon Challenge")
+    #title.title("Welcome to Novartis DS&D Data Science Hackathon Challenge")
+    title.title("Welcome to Data Science Hackathon Challenge")
     subtitle = st.empty()
     subtitle.header("Please enter your login details to proceed")
     login = st.empty()
@@ -51,7 +52,8 @@ def login_password():
     
 def Competition(): 
     
-    st.title("Welcome to Novartis DS&D Data Science Hackathon Challenge")
+    #st.title("Welcome to Novartis DS&D Data Science Hackathon Challenge")
+    st.title("Welcome to Data Science Hackathon Challenge")
     st.header("Download the datasets & read the rules,regulations here!")
     
     col1, col2 = st.beta_columns(2)
@@ -276,7 +278,7 @@ def _max_width_():
     
 def main():
     _max_width_()   
-    st.sidebar.image("extra_files//novartis_logo_pos_rgb.png", width = 260)
+    #st.sidebar.image("extra_files//novartis_logo_pos_rgb.png", width = 260)
     post_login()        
     return
 
@@ -285,7 +287,8 @@ session_state = get(password='')
 
 if session_state.password != 'pwd123':
     title = st.empty()
-    title.title("Welcome to Novartis DS&D Data Science Hackathon Challenge")
+    #title.title("Welcome to Novartis DS&D Data Science Hackathon Challenge")
+    title.title("Welcome to Data Science Hackathon Challenge")
     subtitle = st.empty()
     subtitle.header("Please enter your login details to proceed")
     login = st.empty()
